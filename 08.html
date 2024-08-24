@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .sidebar {
+            width: 16rem;
+            height: 100vh;
+            background-color: white;
+            border-right: 1px solid #e5e7eb;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar a:hover {
+            background-color: #f3f4f6;
+        }
+        .sidebar a.active {
+            background-color: #6366f1;
+            color: white;
+        }
+        .sidebar a.active:hover {
+            background-color: #4f46e5;
+        }
+        .sidebar a i {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar a span {
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="sidebar">
+            <div class="p-6">
+                <a href="#" class="text-2xl font-bold text-indigo-600">Skydash</a>
+            </div>
+            <nav class="mt-6">
+                <a href="#" class="active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-cube"></i>
+                    <span>UI Elements</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-wpforms"></i>
+                    <span>Form elements</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Charts</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-table"></i>
+                    <span>Tables</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-icons"></i>
+                    <span>Icons</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    <span>User Pages</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Error pages</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-book"></i>
+                    <span>Documentation</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Top Navbar -->
+            <header class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm mb-6">
+                <div class="flex items-center space-x-4">
+                    <button class="p-2">
+                        <i class="fas fa-bars w-6 h-6 text-gray-600"></i>
+                    </button>
+                    <input type="text" placeholder="Search now" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="current-date"></span>
+                    <img src="https://via.placeholder.com/32" alt="Profile" class="w-8 h-8 rounded-full">
+                </div>
+            </header>
+
+            <!-- Welcome Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <div class="col-span-2 bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-xl font-semibold">Welcome User</h2>
+                    <p class="text-gray-600">All systems are running smoothly! You have <a href="#" class="text-indigo-600">3 unread alerts!</a></p>
+                    <div class="flex items-center mt-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span id="weather" class="text-3xl"></span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Mumbai</h3>
+                            <p class="text-gray-500">India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-indigo-100 p-4 rounded-lg shadow-sm text-center">
+                        <p class="text-gray-600">Today's Bookings</p>
+                        <h3 class="text-2xl font-semibold">4006</h3>
+                        <p class="text-green-500">10.00% (30 days)</p>
+                    </div>
+                    <div class="bg-indigo-200 p-4 rounded-lg shadow-sm text-center">
+                        <p class="text-gray-600">Total Bookings</p>
+                        <h3 class="text-2xl font-semibold">61344</h3>
+                        <p class="text-green-500">22.00% (30 days)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details and Sales Report -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium">Order Details</h3>
+                    <p class="text-gray-600">The total number of sessions within the date range...</p>
+                    <div class="grid grid-cols-4 mt-4 text-center">
+                        <div>
+                            <p class="text-indigo-600 text-xl font-semibold">12.3k</p>
+                            <p class="text-gray-600">Order value</p>
+                        </div>
+                        <div>
+                            <p class="text-indigo-600 text-xl font-semibold">14k</p>
+                            <p class="text-gray-600">Orders</p>
+                        </div>
+                        <div>
+                            <p class="text-indigo-600 text-xl font-semibold">71.56%</p>
+                            <p class="text-gray-600">Users</p>
+                        </div>
+                        <div>
+                            <p class="text-indigo-600 text-xl font-semibold">34040</p>
+                            <p class="text-gray-600">Downloads</p>
+                        </div>
+                    </div>
+                    <!-- Insert Chart Here -->
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium">Sales Report</h3>
+                    <p class="text-gray-600">The total number of sessions within the date range...</p>
+                    <!-- Insert Sales Chart Here -->
+                    <canvas id="salesChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Function to get current date
+        function getCurrentDate() {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date();
+            return today.toLocaleDateString(undefined, options);
+        }
+
+        // Function to fetch weather data
+        async function getWeather() {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+            const city = 'Mumbai';
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            return `${data.main.temp}°C`;
+        }
+
+        // Update date and weather on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            document.getElementById('current-date').textContent = getCurrentDate();
+            document.getElementById('weather').textContent = await getWeather();
+        });
+
+        // Initialize Chart.js
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3, 7],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
